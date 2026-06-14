@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISS AI - Intelligent Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="C:\Users\DELL\Pictures\Saved Pictures" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>MISS AI</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="auth-buttons" id="authButtons">
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span class="user-email" id="userEmail"></span>
+                    <div class="user-dropdown">
+                        <button class="btn btn-icon" id="userMenuBtn">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#" id="profileLink"><i class="fas fa-user"></i> Profile</a>
+                            <a href="#" id="settingsLink"><i class="fas fa-cog"></i> Settings</a>
+                            <hr>
+                            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to <span class="gradient-text">MISS AI</span></h1>
+                <p class="hero-subtitle">Your intelligent, tech-savvy assistant for coding, business, and productivity</p>
+                <div class="hero-cta">
+                    <a href="register.html" class="btn btn-primary btn-large">Get Started Free</a>
+                    <a href="#features" class="btn btn-outline btn-large">Learn More</a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Free Messages Daily</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">GPT-4o</span>
+                        <span class="stat-label">Latest Model</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Availability</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-robot fa-10x"></i>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>Why Choose MISS?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3>Coding Assistant</h3>
+                    <p>Get help with debugging, code reviews, and best practices in any programming language.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Business Intelligence</h3>
+                    <p>Analyze data, generate reports, and make informed decisions with AI-powered insights.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3>Learning Companion</h3>
+                    <p>Learn new concepts with clear explanations and personalized study plans.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3>Productivity Boost</h3>
+                    <p>Automate tasks, draft emails, and organize your work efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <p class="price">$0<span>/month</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 10 messages per day</li>
+                        <li><i class="fas fa-check"></i> Basic AI assistance</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Chat history</li>
+                    </ul>
+                    <a href="register.html" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <p class="price">$20<span>/month</span></p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited messages</li>
+                        <li><i class="fas fa-check"></i> Priority AI processing</li>
+                        <li><i class="fas fa-check"></i> Priority support 24/7</li>
+                        <li><i class="fas fa-check"></i> Advanced features</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    <button class="btn btn-primary btn-block" onclick="handleSubscribe('pro')" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to boost your productivity?</h2>
+            <p>Join thousands of users who trust MISS AI for their daily tasks.</p>
+            <a href="register.html" class="btn btn-primary btn-large">Create Free Account</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MISS AI</h4>
+                    <p>Intelligent assistance for the modern world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MISS AI. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

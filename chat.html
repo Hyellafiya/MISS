@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISS AI - Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-app">
+        <!-- Sidebar -->
+        <aside class="chat-sidebar" id="chatSidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>MISS AI</span>
+                </div>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Chat</span>
+                </button>
+            </div>
+            
+            <div class="chat-history" id="chatHistory">
+                <div class="history-header">
+                    <h4>Recent Chats</h4>
+                    <button class="clear-history-btn" id="clearHistoryBtn" title="Clear all chats">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div id="chatList" class="chat-list">
+                    <!-- Chat history items will be loaded here -->
+                    <div class="loading-chats">
+                        <i class="fas fa-spinner fa-spin"></i> Loading chats...
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="sidebarUserEmail"></span>
+                </div>
+                <div class="plan-badge" id="planBadge">Free Plan</div>
+                <div class="message-limit" id="messageLimit">
+                    <span>Messages today:</span>
+                    <span id="messageCount">0/10</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <div class="chat-header">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="chat-title" id="chatTitle">
+                    <h3>New Conversation</h3>
+                </div>
+                <div class="chat-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="clear-chat-btn" id="clearChatBtn" title="Clear current chat">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Welcome Message -->
+                <div class="message welcome-message" id="welcomeMessage">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-sender">MISS AI</div>
+                        <div class="message-text">
+                            👋 Hello! I'm MISS, your intelligent AI assistant. 
+                            I can help you with coding, business questions, learning, and productivity tasks.
+                            What would you like to explore today?
+                        </div>
+                        <div class="message-timestamp">
+                            <i class="far fa-clock"></i> Just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <form id="chatForm" class="chat-form">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Ask MISS anything..." 
+                        rows="1"
+                        maxlength="4000"
+                    ></textarea>
+                    <button type="submit" id="sendButton" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="input-footer">
+                    <span class="char-counter" id="charCounter">0/4000</span>
+                    <span class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                    </span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upgrade Modal -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-crown"></i> Upgrade to Pro</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>You've reached your daily message limit on the Free plan.</p>
+                <div class="upgrade-features">
+                    <h3>Pro Plan Benefits:</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited messages</li>
+                        <li><i class="fas fa-check"></i> Priority AI processing</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced features</li>
+                    </ul>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="handleUpgrade()">
+                        Upgrade Now - $20/month
+                    </button>
+                    <button class="btn btn-outline" onclick="closeModal()">
+                        Maybe Later
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
